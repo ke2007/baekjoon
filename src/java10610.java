@@ -1,7 +1,5 @@
 import java.io.*;
-
 public class java10610 {
-    public static final int MAX = 100000;
     public static String N;
     public static int[] numCountArr;
     public static long strlen;
@@ -29,7 +27,7 @@ public class java10610 {
                     numCountArr[i]--;
                 }
             }
-            System.out.print(sb.toString());
+            System.out.print(sb);
         }
     }
 }
