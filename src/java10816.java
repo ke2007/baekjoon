@@ -35,12 +35,9 @@ public class java10816 {
     private static int lowerBound(int[] arr, int key) {
         int lo = 0;
         int hi = arr.length;
-
         // lo가 hi랑 같아질 때 까지 반복
         while (lo < hi) {
-
             int mid = (lo + hi) / 2; // 중간위치를 구한다.
-
             /*
              *  key 값이 중간 위치의 값보다 작거나 같을 경우
              *
@@ -49,13 +46,10 @@ public class java10816 {
             if (key <= arr[mid]) {
                 hi = mid;
             }
-
             else {
                 lo = mid + 1;
             }
-
         }
-
         return lo;
     }
 

@@ -17,7 +17,9 @@ public class java1181 {
             arr[i]= bf.readLine();
         }
 
-        Arrays.sort(arr, (o1 ,o2)-> {
+        Arrays.sort(arr, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
                 if(o1.length()==o2.length()){
                     return o1.compareTo(o2);
                 }
@@ -25,7 +27,7 @@ public class java1181 {
                     return o1.length() - o2.length();
                 }
             }
-        );
+        });
 
         StringBuilder sb = new StringBuilder();
         sb.append(arr[0]).append("\n");

@@ -1,40 +1,56 @@
-import com.sun.source.doctree.SeeTree;
-
 import java.io.*;
 import java.util.Stack;
+import java.util.StringTokenizer;
 
 public class java9012 {
+
+    static StringBuilder sb = new StringBuilder();
+    static Stack<Character> result;
+    static StringTokenizer st;
     public static void main(String[] args) throws IOException {
-        StringBuilder sb = new StringBuilder();
+
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
         int N = Integer.parseInt(br.readLine());
 
-
         for (int i = 0; i < N; i++) {
-            sb.append(solve(br.readLine())).append('\n');
+            st =new StringTokenizer(br.readLine());
+            result = new Stack<>();
+            solve(st.nextToken());
         }
         System.out.println(sb);
-
     }
-    public static String solve(String s){
-        Stack<Character> at = new Stack<>();
+    public static void solve(String s){
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (int i = 0; i < s.length(); i++){               //문자열 길이만큼 반복
 
-            if (c == '(') {
-                at.push(c);
-            } else if (at.empty()) {
-                return "NO";
-            } else {
-                at.pop();
+            char c = s.charAt(i);                           //charAt()으로 한글자씩 잘라서 판단
+
+            if (c == '('){                                  // '(' 을 받으면 스택에 push
+
+                    result.push(c);
+            }
+            else {                                          // ')'을 받았을때 스택이 비어있다면 조건에 충족하지 않으므로
+                if (result.empty()) {
+
+                    sb.append("NO").append("\n");           //"NO" 출력
+                    return ;
+                }
+                else {
+                    result.pop();                           // ')'을 받았다면 한쌍이 맞춰졌으므로 '(' 을 stack 에서 pop 한다
+                }
             }
         }
-        if (at.empty()) {
-            return "YES";
-        } else {
-            return "NO";
-        }
+        if (result.empty()) {
 
+            sb.append("YES").append('\n');
+        }
+        else {
+            sb.append("NO").append('\n');
+        }
     }
 }
+
+

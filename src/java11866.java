@@ -26,7 +26,7 @@ public class java11866 {
         while ((q.size()>1)){  //마지막 남은 한명 처리를 위해 남은 인원수가 1보다 클 떄까지 반복
 
             for (int i = 0; i < K-1; i++) { //K번째 사람을 poll 해야하므로 k-1까지 반복
-                q.offer(q.poll()); // 해당되지않는 사람은 뒤로 다시 들어감 (원형큐 )poll -> offer
+                q.offer(q.poll()); // 해당되지않는 사람은 뒤로 다시 들어감 poll -> offer
             }
             sb.append(q.poll()).append(", "); //반복문이 끝났다 = K번째 사람이다 = poll 함.
         } //반복

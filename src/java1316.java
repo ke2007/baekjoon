@@ -30,7 +30,7 @@ public class java1316 {
 
             if(prev!=now){
 
-                if (check[now - 'a'] == false) {
+                if (!check[now - 'a']) {
 
                     check[now -'a'] = true;
                     prev = now;
