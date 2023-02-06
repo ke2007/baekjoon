@@ -16,13 +16,14 @@ public class java1012 {
     static int N;
     static int K;
     static boolean[][] visited;
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
+
         // 입력값
         int testCase = Integer.parseInt(br.readLine()); //테스트 케이스 개수
-
 
         //testcase 만큼 반복
         for (int i = 0; i < testCase; i++) {
@@ -30,6 +31,7 @@ public class java1012 {
             M = Integer.parseInt(st.nextToken()); // 가로길이
             N = Integer.parseInt(st.nextToken()); // 세로길이
             K = Integer.parseInt(st.nextToken()); // 배추 개수
+
 
             BCHB = new int[M][N]; //int 배열 초기값은 0
             visited = new boolean[M][N];
@@ -63,8 +65,6 @@ public class java1012 {
     * @param startY 시작 y좌표
      */
     private static void isValid(int startX, int startY) {
-
-        //재귀 탈출조건( 인접한 배추가 없을때( 인접한 상하좌우중 한개의 좌표가 0일때 탈출해야함)
         visited[startX][startY] = true;
 
         for (int i = 0; i < 4; i++) {
